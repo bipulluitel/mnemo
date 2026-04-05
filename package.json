@@ -7,12 +7,14 @@
   "workspaces": [
     "shared",
     "mcp-servers/mnemo-mcp",
+    "mcp-servers/mnemo-stub",
     "daemon"
   ],
   "scripts": {
-    "build": "npm run build:shared && npm run build:mcp && npm run build:daemon",
+    "build": "npm run build:shared && npm run build:mcp && npm run build:stub && npm run build:daemon",
     "build:shared": "npm run build -w shared",
     "build:mcp": "npm run build -w @mnemo/mcp-server",
+    "build:stub": "npm run build -w @mnemo/stub-server",
     "build:daemon": "npm run build -w @mnemo/daemon",
     "clean": "rm -rf shared/dist mcp-servers/mnemo-mcp/dist daemon/dist",
     "setup": "node scripts/setup.mjs",

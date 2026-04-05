@@ -4,17 +4,17 @@
   "display_name": "Mnemo",
   "version": "0.1.0",
   "description": "Persistent memory, personality profiling, task scheduling, and Telegram messaging for Claude",
-  "long_description": "Mnemo gives Claude persistent memory across conversations using a local SQLite database. It stores profile facts about the user (preferences, role, interests), episodic memories (notable events and experiences), entity tracking (people, projects, tools the user mentions), and session summaries. Use mnemo_remember to save facts, mnemo_recall to search memories, mnemo_profile to read the user's profile, mnemo_record_episode to log events, mnemo_track_entity and mnemo_relate to track people/projects/relationships, mnemo_save_session to save conversation summaries, and mnemo_schedule/mnemo_list_tasks for task scheduling. At the start of every conversation, call mnemo_profile to load context about who you are talking to.",
+  "long_description": "Mnemo gives Claude persistent memory across conversations using a local SQLite database. It stores profile facts about the user (preferences, role, interests), episodic memories (notable events and experiences), entity tracking (people, projects, tools the user mentions), and session summaries. On first launch, use setup_mnemo to install the full system. After restart, all memory tools become available: mnemo_remember, mnemo_recall, mnemo_profile, mnemo_record_episode, mnemo_track_entity, mnemo_relate, mnemo_save_session, mnemo_schedule, and more.",
   "author": {
     "name": "Bipul Luitel"
   },
   "license": "MIT",
   "server": {
     "type": "node",
-    "entry_point": "mcp-servers/mnemo-mcp/dist/index.js",
+    "entry_point": "launcher.js",
     "mcp_config": {
       "command": "node",
-      "args": ["${__dirname}/mcp-servers/mnemo-mcp/dist/index.js"],
+      "args": ["${__dirname}/launcher.js"],
       "env": {
         "MNEMO_CONFIG_PATH": "~/.mnemo/config.json"
       }
