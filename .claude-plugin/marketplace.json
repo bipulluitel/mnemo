@@ -1,33 +1,22 @@
 {
-  "install": {
-    "prerequisites": [
-      "Node.js 20+",
-      "Ollama (https://ollama.com)"
-    ],
-    "steps": [
-      {
-        "name": "bootstrap",
-        "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/bootstrap.sh",
-        "description": "Install Ollama model, detect sync folder, initialize database, write config"
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "mnemo-marketplace",
+  "description": "Persistent memory, personality profiling, and task scheduling for Claude",
+  "owner": {
+    "name": "Bipul Luitel",
+    "email": "bipulluitel@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "mnemo",
+      "description": "Persistent memory, personality profiling, task scheduling, and Telegram messaging for Claude",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/bipulluitel/mnemo.git",
+        "sha": "85d89de08f6f5b341ca66600b3f34213393b0e67"
       },
-      {
-        "name": "build",
-        "command": "cd ${CLAUDE_PLUGIN_ROOT} && npm run build",
-        "description": "Build all packages (shared, MCP server, daemon)"
-      }
-    ],
-    "postInstall": "Run /mnemo:setup to complete configuration and install the background daemon."
-  },
-  "uninstall": {
-    "steps": [
-      {
-        "name": "uninstall-daemon",
-        "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/uninstall-daemon.sh",
-        "description": "Stop and remove the background daemon"
-      }
-    ],
-    "note": "Database and config in ~/.mnemo/ are preserved. Delete manually to fully remove."
-  },
-  "keywords": ["memory", "persona", "profile", "scheduling", "telegram", "sqlite"],
-  "categories": ["productivity", "memory", "automation"]
+      "homepage": "https://github.com/bipulluitel/mnemo"
+    }
+  ]
 }

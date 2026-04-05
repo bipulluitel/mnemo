@@ -6,9 +6,39 @@
   "description": "Persistent memory, personality profiling, task scheduling, and Telegram messaging for Claude",
   "long_description": "Mnemo gives Claude persistent memory across conversations using a local SQLite database. It stores profile facts about the user (preferences, role, interests), episodic memories (notable events and experiences), entity tracking (people, projects, tools the user mentions), and session summaries. On first launch, use setup_mnemo to install the full system. After restart, all memory tools become available: mnemo_remember, mnemo_recall, mnemo_profile, mnemo_record_episode, mnemo_track_entity, mnemo_relate, mnemo_save_session, mnemo_schedule, and more.",
   "author": {
-    "name": "Bipul Luitel"
+    "name": "Bipul Luitel",
+    "url": "https://github.com/bipulluitel"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bipulluitel/mnemo"
+  },
+  "homepage": "https://github.com/bipulluitel/mnemo",
+  "support": "https://github.com/bipulluitel/mnemo/issues",
+  "tools": [
+    {
+      "name": "setup_mnemo",
+      "description": "Install and configure the full Mnemo memory system"
+    },
+    {
+      "name": "mnemo_status",
+      "description": "Check Mnemo installation status and system health"
+    }
+  ],
+  "tools_generated": true,
+  "keywords": [
+    "memory",
+    "persistence",
+    "profile",
+    "personality",
+    "scheduling",
+    "telegram",
+    "entities",
+    "knowledge-graph",
+    "sessions",
+    "sqlite"
+  ],
   "server": {
     "type": "node",
     "entry_point": "launcher.js",
@@ -16,8 +46,15 @@
       "command": "node",
       "args": ["${__dirname}/launcher.js"],
       "env": {
-        "MNEMO_CONFIG_PATH": "~/.mnemo/config.json"
+        "MNEMO_CONFIG_PATH": "${HOME}/.mnemo/config.json"
       }
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin"],
+    "runtimes": {
+      "node": ">=20.0.0"
     }
   }
 }
