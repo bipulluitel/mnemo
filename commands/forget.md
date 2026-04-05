@@ -1,7 +1,6 @@
 ---
 name: forget
-description: Remove memories about a specific topic. Example:
-  "/mnemo:forget everything about project X"
+description: "Remove memories about a specific topic. Example: /mnemo:forget everything about project X"
 ---
 
 # Forget Memories

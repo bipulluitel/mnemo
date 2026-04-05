@@ -1,7 +1,6 @@
 ---
 name: schedule
-description: Create a scheduled task from natural language. Example usage:
-  "/mnemo:schedule check my email every morning at 8am"
+description: "Create a scheduled task from natural language. Example: /mnemo:schedule check my email every morning at 8am"
 ---
 
 # Create Scheduled Task

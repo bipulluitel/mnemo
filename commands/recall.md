@@ -1,8 +1,6 @@
 ---
 name: recall
-description: Search your memory. Find past conversations, decisions, facts,
-  or anything Mnemo has stored. Example: "/mnemo:recall what did we
-  decide about the marketing budget?"
+description: "Search your memory. Find past conversations, decisions, facts, or anything Mnemo has stored. Example: /mnemo:recall what did we decide about the marketing budget?"
 ---
 
 # Search Memory
