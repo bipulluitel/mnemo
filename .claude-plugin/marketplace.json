@@ -1,0 +1,33 @@
+{
+  "install": {
+    "prerequisites": [
+      "Node.js 20+",
+      "Ollama (https://ollama.com)"
+    ],
+    "steps": [
+      {
+        "name": "bootstrap",
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/bootstrap.sh",
+        "description": "Install Ollama model, detect sync folder, initialize database, write config"
+      },
+      {
+        "name": "build",
+        "command": "cd ${CLAUDE_PLUGIN_ROOT} && npm run build",
+        "description": "Build all packages (shared, MCP server, daemon)"
+      }
+    ],
+    "postInstall": "Run /mnemo:setup to complete configuration and install the background daemon."
+  },
+  "uninstall": {
+    "steps": [
+      {
+        "name": "uninstall-daemon",
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/uninstall-daemon.sh",
+        "description": "Stop and remove the background daemon"
+      }
+    ],
+    "note": "Database and config in ~/.mnemo/ are preserved. Delete manually to fully remove."
+  },
+  "keywords": ["memory", "persona", "profile", "scheduling", "telegram", "sqlite"],
+  "categories": ["productivity", "memory", "automation"]
+}

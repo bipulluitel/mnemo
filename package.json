@@ -1,0 +1,25 @@
+{
+  "name": "mnemo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Persistent memory, personality profiling, task scheduling, and Telegram messaging for Claude",
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "mcp-servers/mnemo-mcp",
+    "daemon"
+  ],
+  "scripts": {
+    "build": "npm run build:shared && npm run build:mcp && npm run build:daemon",
+    "build:shared": "npm run build -w shared",
+    "build:mcp": "npm run build -w @mnemo/mcp-server",
+    "build:daemon": "npm run build -w @mnemo/daemon",
+    "clean": "rm -rf shared/dist mcp-servers/mnemo-mcp/dist daemon/dist",
+    "setup": "node scripts/setup.mjs",
+    "postinstall": "npm run build"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

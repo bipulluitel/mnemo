@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+
+# Config & secrets
+.env
+.mnemo/
+.claude/settings.local.json
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

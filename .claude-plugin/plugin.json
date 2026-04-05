@@ -1,0 +1,26 @@
+{
+  "name": "mnemo",
+  "version": "0.1.0",
+  "description": "Persistent memory, personality profiling, task scheduling, and Telegram messaging for Claude Cowork",
+  "author": "Bipul Luitel",
+  "homepage": "https://github.com/bipulluitel/mnemo",
+  "skills": ["./skills/mnemo"],
+  "commands": [
+    "./commands/setup",
+    "./commands/schedule",
+    "./commands/recall",
+    "./commands/forget",
+    "./commands/profile",
+    "./commands/status",
+    "./commands/configure"
+  ],
+  "mcpServers": {
+    "mnemo-mcp": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/mnemo-mcp/dist/index.js"],
+      "env": {
+        "MNEMO_CONFIG_PATH": "~/.mnemo/config.json"
+      }
+    }
+  }
+}
